@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title mt-0"> Table du Visites</h4>
+                        <p class="card-category"><mat-form-field appearance="standard">
+                          <mat-label>Filter</mat-label>
+                          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ID" #input>
+                        </mat-form-field></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>
+                                        Id
+                                    </th>
+                                    <th>
+                                        Date Visite 
+                                    </th>
+                                    <th>
+                                        Date Expiration
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let vis of vislist">
+                                        <td>
+                                            {{vis.Id}}
+                                        </td>
+                                        <td>
+                                            {{vis.DateVisite}}
+                                        </td>
+                                        <td>
+                                            {{vis.DateExpiration}}
+                                        </td>
+                                        <td>
+                                          <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-info btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">edit</i>
+                                          </button>
+                                          <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                          </button>
+                                         </td>
+                                    </tr>
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
